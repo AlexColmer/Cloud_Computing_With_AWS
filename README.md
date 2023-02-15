@@ -26,3 +26,45 @@
 - Operational expenditure allows company to only pay for what they use, this provides companies with much higher levels of flexibility 
 
 
+# launching an pp with aws steps
+
+## step 1
+
+- Make sure the name and tags is written as (your name- group name - app)
+
+## Step 2
+
+- make sure ubuntu 18.04 has been selected 
+
+## Step 3
+
+- Make sure instance type is t2.micro
+
+## step 4
+
+- make sure you select the correct key pair 
+
+## step 5
+
+- edit network settings
+- make sure default vpc is selected 
+- select subnet DevOpsStudent default 1a
+- enable auto-assign public ip
+- create security group 
+- security group name same as the instance 
+- add securtiy group make sure that ssh is with my ip, http is anywhere and add one more security group as anywhere and add port range 3000
+- once all this is completed launch trhe machiine 
+
+## step 6
+
+- once you have launched connect to your instance and find ssh client 
+- got to gitbash and follow the next steps
+- run this command to get the correct permision `chmod 400 devops-tech201.pem` run `ls -ll` to see it has worked
+- then run the ssh with this code `ec2-34-244-14-131.eu-west-1.computate.amazonaws.com`
+- once inside the ssh then `sudo apt-get update -y`
+- after this then `sudo apt-install nginx` to install nginx copy your ip adress and you should see nginx on your browser
+
+![](nginx.png)
+
+
+![](Diagram.png)

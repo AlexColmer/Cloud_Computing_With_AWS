@@ -68,3 +68,17 @@
 
 
 ![](Diagram.png)
+
+## How to get app working with aws ec2
+
+- once you have nginx running exit out of the ssh file and into the .ssh folder and input this code `scp -i devops-tech201.pem -r <your app path> ubuntu@<your IP in the example block you paste to ssh into ec2>:/home/ubuntu` it will take abiut of time to load everything in 
+- once it has all loaded up you should just have to run node app.js and then input your ip adress wiht :3000 at the end to get the app up and running ]
+- if your reverse proxy isnt set up atuomtically you will have to input it manually 
+- use `sudo nano /etc/nginx/sites-available/default to be able to
+location / { proxy_pass http://localhost:8080; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection 'upgrade'; proxy_set_header Host $host; proxy_cache_bypass $http_upgrade; } }` add this to and chnage where it says 8000 to what ever port your computer is listening on
+- then run sudo nginx -t
+- finally use sudo systemctl restart nginx
+- then you should just be able to run the ip adress without adding the port number on the end
+and you should just have this 
+
+![](App_Working.png)

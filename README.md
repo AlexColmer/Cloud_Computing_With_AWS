@@ -59,8 +59,8 @@
 
 - once you have launched connect to your instance and find ssh client 
 - got to gitbash and follow the next steps
-- run this command to get the correct permision `chmod 400 devops-tech201.pem` run `ls -ll` to see it has worked
-- then run the ssh with this code `ec2-34-244-14-131.eu-west-1.computate.amazonaws.com`
+- run this command to get the correct permision `chmod 400 <key pair>` run `ls -ll` to see it has worked
+- then run the ssh with this code `ec2(ip).eu-west-1.computate.amazonaws.com`
 - once inside the ssh then `sudo apt-get update -y`
 - after this then `sudo apt-install nginx` to install nginx copy your ip adress and you should see nginx on your browser
 
@@ -71,7 +71,7 @@
 
 ## How to get app working with aws ec2
 
-- once you have nginx running exit out of the ssh file and into the .ssh folder and input this code `scp -i devops-tech201.pem -r <your app path> ubuntu@<your IP in the example block you paste to ssh into ec2>:/home/ubuntu` it will take abiut of time to load everything in 
+- once you have nginx running exit out of the ssh file and into the .ssh folder and input this code `scp -i <key pair> -r <your app path> ubuntu@<your IP in the example block you paste to ssh into ec2>:/home/ubuntu` it will take abiut of time to load everything in 
 - once it has all loaded up you should just have to run node app.js and then input your ip adress wiht :3000 at the end to get the app up and running ]
 - if your reverse proxy isnt set up atuomtically you will have to input it manually 
 - use `sudo nano /etc/nginx/sites-available/default to be able to
@@ -95,4 +95,6 @@ key pairs connect
 - vpc is a virutal private cloud oprovides a range of postcodes 
 - need to refactor becasue monolith architectre is not scalabel 
 - Refactoring also allows for agile methodology and scrum framework
-- scalable means that if you want another feature, can connect to another subnet via a gateway, want another feature, can connect to another subnet via a gateway, develop that subnet independetly without affecting the user journey, since all other features fucntion indepenmdently.
+- scalable means that if you want another feature, can connect to another subnet via a gateway, want another feature, can connect to another subnet via a gateway, 
+
+- develop that subnet independetly without affecting the user journey, since all other features fucntion indepenmdently.

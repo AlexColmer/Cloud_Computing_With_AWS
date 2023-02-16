@@ -98,3 +98,11 @@ key pairs connect
 - scalable means that if you want another feature, can connect to another subnet via a gateway, want another feature, can connect to another subnet via a gateway, 
 
 - develop that subnet independetly without affecting the user journey, since all other features fucntion indepenmdently.
+
+
+## Two tier- deploying our database vm on ec2
+
+### requirements 
+
+- app teir deployed on public ip on pot 3000
+- To create 2nd tier dependencies: ubuntu 18.04LTS – mongodb installed – changed configuration mongod.conf 0.0.0.0- Security group for our DB – allow 27017 from anywhere – allow only form app instance – create an environment variable in app instance with DB endpoint relaunch the app

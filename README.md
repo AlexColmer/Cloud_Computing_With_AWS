@@ -19,7 +19,7 @@
 - Software as a Service (SaaS): Provides access to software applications over the internet, with the infrastructure and maintenance handled by the service provider. SaaS applications are typically accessed through a web browser.
 
 ### Histroy of AWS
-![images](aws-history.webp)
+![](aws-history.webp)
 
 
 - capital expenditure: you will need to buy servers,cables and networking equipment 
@@ -64,10 +64,10 @@
 - once inside the ssh then `sudo apt-get update -y`
 - after this then `sudo apt-install nginx` to install nginx copy your ip adress and you should see nginx on your browser
 
-![images](nginx.png)
+![](nginx.png)
 
 
-![images](Diagram.png)
+![](Diagram.png)
 
 ## How to get app working with aws ec2
 
@@ -81,14 +81,14 @@ location / { proxy_pass http://localhost:8080; proxy_http_version 1.1; proxy_set
 - then you should just be able to run the ip adress without adding the port number on the end
 and you should just have this 
 
-![images](App_Working.png)
+![](App_Working.png)
 
 ## ssh 
 
 key pairs connect
 
 ## two tier architecture 
-![images](aws_vpc.jpeg)
+![](aws_vpc.jpeg)
 
 - ireland is used as we are all based in the uk and it has 3 AZs
 - When we launch auto scaler group and load balancer we will want to launch in multiple AZ's so we can balance the traffic and make it highly available
@@ -106,3 +106,21 @@ key pairs connect
 
 - app teir deployed on public ip on pot 3000
 - To create 2nd tier dependencies: ubuntu 18.04LTS – mongodb installed – changed configuration mongod.conf 0.0.0.0- Security group for our DB – allow 27017 from anywhere – allow only form app instance – create an environment variable in app instance with DB endpoint relaunch the app
+
+
+
+
+## getting mngodb working with the cloud 
+
+- launch a new isntance making sure that they key paur is still correct and you have added a new secrutiy gorup with the ip adress of mongodb 
+- open gitbash and ssh into the database file make sure to git clone you git hub to access the files need however githubn may not always be working so use the scp method instead. after you are in github file navigate to the databse folder.
+- run the command ls to make sure that you have the provision.sh file in the folder 
+- then run `sudo chamod +x provision.sh` to make sure that you have the correct permisions.
+- after this `sudo nano provision.sh` to make sure yopu have the correct script in the file
+- then run `sudo ./provision.sh` to run the file 
+- after this run sudo apt-get update -y` and sudo apt-get upgrade -y` to update and upgarde the file to make it work.
+- to check mongodb is working run `sudo systmectl status mongod` it shoudl come up as green and say runnign 
+
+## blockers and how to fix them 
+
+when running mongodb make sure you comment out the two lines that delete the file and add in the new file. 

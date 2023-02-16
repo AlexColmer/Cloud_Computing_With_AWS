@@ -104,7 +104,7 @@ key pairs connect
 ### requirements 
 
 - app teir deployed on public ip on pot 3000
-- To create 2nd tier dependencies: ubuntu 18.04LTS – mongodb installed – changed configuration mongod.conf 0.0.0.0- Security group for our DB – allow 27017 from anywhere – allow only form app instance – create an environment variable in app instance with DB endpoint relaunch the app
+- To create 2nd tier dependencies: ubuntu 18.04LTS – mongodb installed – changed configuration mongod.conf 0.0.0.0- Security group for our DB – allow 27017 from anywhere – allow only form app instance – create an environment variable in app instance with DB endpoint relaunch the app - Restart and enable mongodb
 
 
 
@@ -120,6 +120,13 @@ key pairs connect
 - after this run sudo apt-get update -y` and sudo apt-get upgrade -y` to update and upgarde the file to make it work.
 - to check mongodb is working run `sudo systmectl status mongod` it shoudl come up as green and say runnign 
 
+## running the app
+make sure that you first set up the environment variable with `DB_HOST=mongodb://(your ip adress):27017/posts`
+once this is set up run `printenv DB_HOST` to check the env variable has worked 
+- once this is done run the app with node app.js and if you have set up reverse proxy previously then you should just have to put in your app ip adress into the web broswer with /posts on the end and you should get this page working. this wont get any data on the posts page it will be blank 
+- to get data on posts page you need to run `node seeds/seed.js` to seed the app and jsut run `node app.js to run it and it should look like this 
+![Alt text](Images/App_with_posts.png)
+
 ## blockers and how to fix them 
 
-when running mongodb make sure you comment out the two lines that delete the file and add in the new file. 
+when running mongodb make sure you comment out the two lines that delete the file and add in the new file. always make sure that you run the app after any changes that you make. If npm install isnt working then try just running node app.js and iot should work 

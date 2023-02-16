@@ -82,3 +82,17 @@ location / { proxy_pass http://localhost:8080; proxy_http_version 1.1; proxy_set
 and you should just have this 
 
 ![](App_Working.png)
+
+## ssh 
+
+key pairs connect
+
+## two tier architecture 
+![](aws_vpc.jpeg)
+
+- ireland is used as we are all based in the uk and it has 3 AZs
+- When we launch auto scaler group and load balancer we will want to launch in multiple AZ's so we can balance the traffic and make it highly available
+- vpc is a virutal private cloud oprovides a range of postcodes 
+- need to refactor becasue monolith architectre is not scalabel 
+- Refactoring also allows for agile methodology and scrum framework
+- scalable means that if you want another feature, can connect to another subnet via a gateway, want another feature, can connect to another subnet via a gateway, develop that subnet independetly without affecting the user journey, since all other features fucntion indepenmdently.

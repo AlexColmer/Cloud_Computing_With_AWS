@@ -6,7 +6,7 @@
 ### What is cloud computing??
 - cloud computing is the delivery of computing services this inlcudes servers, storage, databases, networking, software, analytics, and intelligence over the cloud. This offers faster inovation and flexible resources.
 ### History of Cloud
-![](images/History_Of_AWS.png)
+![Alt text](Images/History_Of_AWS.png)
 ### Different ypes of cloud 
 - Public cloud, This ism offerd by third party providers, it is avalibale to anyone over the public internet also it scales quickly and is very convenient 
 - private cloud, This is offerd to select users over the internet or private internal networks, it provides greater security control and requires traditional datacenter staffing and maintenance.
@@ -19,7 +19,7 @@
 - Software as a Service (SaaS): Provides access to software applications over the internet, with the infrastructure and maintenance handled by the service provider. SaaS applications are typically accessed through a web browser.
 
 ### Histroy of AWS
-![](images/aws-history.webp)
+![Alt text](Images/aws-history.webp)
 
 
 - capital expenditure: you will need to buy servers,cables and networking equipment 
@@ -64,10 +64,10 @@
 - once inside the ssh then `sudo apt-get update -y`
 - after this then `sudo apt-install nginx` to install nginx copy your ip adress and you should see nginx on your browser
 
-![](images/nginx.png)
+![Alt text](Images/nginx.png)
 
 
-![](images/Diagram.png)
+![Alt text](Images/Diagram.png)
 
 ## How to get app working with aws ec2
 
@@ -81,15 +81,14 @@ location / { proxy_pass http://localhost:8080; proxy_http_version 1.1; proxy_set
 - then you should just be able to run the ip adress without adding the port number on the end
 and you should just have this 
 
-![](images/App_Working.png)
+![Alt text](Images/App_Working.png)
 
 ## ssh 
 
 key pairs connect
 
 ## two tier architecture 
-![](images/aws_vpc.jpeg)
-
+![Alt text](Images/aws_vpc.jpeg)
 - ireland is used as we are all based in the uk and it has 3 AZs
 - When we launch auto scaler group and load balancer we will want to launch in multiple AZ's so we can balance the traffic and make it highly available
 - vpc is a virutal private cloud oprovides a range of postcodes 

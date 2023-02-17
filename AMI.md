@@ -14,3 +14,6 @@
 - all you need to do now is name the AMI and set the description so that any developer will know how to launch it so you will need to include what ports your are listening on. eg (3000, 22, 80)
 ### step 5
 - you can now terminate your app instance as you have an image of it that you can launch whenever is needed. 
+### step 6
+- you will need to launch the instance after the ami is active and name it approprialty `name-group-db-ami` enter the key you have been using the entire time 
+- select the exisitng security group you made when setting up an instance then launch the ami instacne there. 

@@ -111,10 +111,10 @@ key pairs connect
 
 ## getting mongodb working with the cloud 
 
-- launch a new isntance making sure that they key paur is still correct and you have added a new secrutiy gorup with the ip adress of mongodb 
+- launch a new isntance making sure that they key pair is still correct and you have added a new secrutiy gorup with the ip adress of mongodb 
 - open gitbash and ssh into the database file make sure to git clone you git hub to access the files need however githubn may not always be working so use the scp method instead. after you are in github file navigate to the databse folder.
 - run the command ls to make sure that you have the provision.sh file in the folder 
-- then run `sudo chamod +x provision.sh` to make sure that you have the correct permisions.
+- then run `sudo chmod +x provision.sh` to make sure that you have the correct permisions.
 - after this `sudo nano provision.sh` to make sure yopu have the correct script in the file
 - then run `sudo ./provision.sh` to run the file 
 - after this run sudo apt-get update -y` and sudo apt-get upgrade -y` to update and upgarde the file to make it work.

@@ -109,7 +109,7 @@ key pairs connect
 
 
 
-## getting mngodb working with the cloud 
+## getting mongodb working with the cloud 
 
 - launch a new isntance making sure that they key paur is still correct and you have added a new secrutiy gorup with the ip adress of mongodb 
 - open gitbash and ssh into the database file make sure to git clone you git hub to access the files need however githubn may not always be working so use the scp method instead. after you are in github file navigate to the databse folder.
@@ -130,3 +130,5 @@ once this is set up run `printenv DB_HOST` to check the env variable has worked
 ## blockers and how to fix them 
 
 when running mongodb make sure you comment out the two lines that delete the file and add in the new file. always make sure that you run the app after any changes that you make. If npm install isnt working then try just running node app.js and iot should work 
+
+

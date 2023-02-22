@@ -53,5 +53,28 @@
 - find route tables on the left side and clikc create route table 
 - name it normnally with RT 
 - select our VPC again
- - then select your rout table and sleect subnet associates and make sure it is associated with your subnet and also make sure that routes is local with destination 0.0.0.0 so everyone can use them. 
+- then select your rout table and sleect subnet associates and make sure it is associated with your subnet and also make sure that routes is local with destination 0.0.0.0 so everyone can use them. 
+ - create a security gorup with the ports for out app so 22, 80, 3000. 
+ - once all this is done go to ec2 and launch an instacne from ap ami and run it with your vpc your subnet and security grou pyou created 
+ if it works you should be able to see your app running 
+ ![Alt text](Images/App_Working.png)
+## Creating a private subnet for our DB
+- like before we need to go to subnets and create a subnet 
+- choose you VPC from the list 
+- name the subnet according to the naming convention we always use
+- In the IPV4 CIDR Block, pick a subnet available within the range. This might take a lot of trial and error as most of them might already be in use.
+- then create the subnet 
+### now creating a route table 
+- select vpc from the list and create rout table 
+- find subnet associations from the route table selection and edit the associating and associate it with the orivate subnet we created then save it
+- this rout only needs to communicate with the local machine and not the internet so no need to add internet gateway for this. 
+- when creating the security group for this you will need to only add one new group with the port of 27017 to allow the app to talk to our db 
+## connecting the app with the db
+- once the previous steps have been done launch the db with the private subnet and security goups we created. 
+- once that is up and running all you should have to do is shh into the app and coneect it to the db by running the command `export DB_HOST=mongodb://ipv4-private-address-of-DB-EC2-instance:27017/posts` make sure to add the private ip adress of your db 
+- then `printenv DB_HOST` to make sure it is working. 
+- all you should have to do then is just cd into your app and `npm install`, `node seeds/seed.js` and then just `node app.js`
+- finally run the app it with posts and you should get this 
+![Alt text](Images/App_with_posts.png)
 
+There you go you have created a vpc, private and public subnet and then used that to run two tier architecture to get the app and db talking and working together. 

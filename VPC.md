@@ -1,5 +1,5 @@
 # VPC
-![Alt text](Images/aws_vpc.jpeg)
+![Alt text](Images/VPC.png)
 ### what is VPC
 - Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources into a virtual network that you've defined. This virtual network closely resembles a traditional network that you'd operate in your own data center, with the benefits of using the scalable infrastructure of AWS.
 
@@ -30,4 +30,28 @@
 # Route table/s
 - A route table contains a set of rules, called routes, that determine where network traffic from your subnet or gateway is directed.
 
+
+# How to set up vpc For app
+
+## step 1
+- go to VPC on aws 
+- Create VPC
+- when creating a VPC make it VPC only 
+- name tag make it the usual nnaming conventio (name-tech201-VPC)
+- ipv4 CIDR block 10.0.0.0/42
+- now create the vpc
+## Step 2
+- Creatign an Internet gateway 
+- just make a name with normal naming convention just add IG so that you know what you have done 
+- Creat the IG
+## step 3
+- Creating a subnet 
+- Select our vpc we have made and hit create subnet 
+- once created go to associate subnet with VPC
+## step 4
+- Creating a route table (RT)
+- find route tables on the left side and clikc create route table 
+- name it normnally with RT 
+- select our VPC again
+ - then select your rout table and sleect subnet associates and make sure it is associated with your subnet and also make sure that routes is local with destination 0.0.0.0 so everyone can use them. 
 

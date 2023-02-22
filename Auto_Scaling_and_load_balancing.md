@@ -99,3 +99,7 @@ node app.js`
 ```
 - you should se this with copying the ip adress with portt 3000 
 ![Alt text](Images/App_Working.png)
+
+best practice use this command `nohup npm start 2>/dev/null 1>/dev/null&`
+then next best is `sudo npm install forever -g` `forever start app.js`
+then last use the command that is shown above. 

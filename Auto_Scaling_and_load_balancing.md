@@ -60,5 +60,42 @@ If there are any typos or errors then nginx wont run
 - dont need notifications so go next
 - for tags in key type Name and then normal naming convention for value 
 - lastly select auto scaling group 
-if it works you should just have to put in your ip adress and see this 
+- if it works you should just have to put in your ip adress and see this 
 ![Alt text](Images/nginx.png)
+
+## How to get the app working with a load balancer 
+
+- the majority of the steps wqill be the same as before however this time in user data you will need to add this code to it for the app to start working 
+
+```
+#!/bin/bash
+
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
+sudo systemctl start nginx 
+sudo systemctl enable nginx -y
+
+
+
+sudo systemctl restart nginx -y
+
+sudo apt-get install python -y
+
+sudo apt-get install python-software-properties
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install nodejs -y
+
+
+sudo npm install pm2 -g
+
+git clone ("your git here")
+
+cd tech201_vertualisation 
+cd app
+cd app
+npm install 
+node app.js`
+```
+- you should se this with copying the ip adress with portt 3000 
+![Alt text](Images/App_Working.png)

@@ -30,6 +30,9 @@
 # Route table/s
 - A route table contains a set of rules, called routes, that determine where network traffic from your subnet or gateway is directed.
 
+# NACL (Network access control list)
+- is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets.
+
 
 # How to set up vpc For app
 
@@ -78,3 +81,7 @@
 ![Alt text](Images/App_with_posts.png)
 
 There you go you have created a vpc, private and public subnet and then used that to run two tier architecture to get the app and db talking and working together. 
+
+
+
+use ssh instead of https to push changes to github it is more secure for it to work you need ssh key pairs (RSA key)
